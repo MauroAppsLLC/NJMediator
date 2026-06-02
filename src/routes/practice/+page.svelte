@@ -37,10 +37,10 @@
 	];
 
 	const why = [
-		{ title: 'Cost-Effective', body: 'Avoid the significant expenses associated with protracted litigation.', icon: 'dollar' },
-		{ title: 'Time-Saving', body: 'Resolve disputes faster and move forward without the delays of court.', icon: 'clock' },
-		{ title: 'Confidential', body: 'Discussions and details remain private and protected.', icon: 'lock' },
-		{ title: 'Collaborative', body: 'A cooperative process that allows both sides to maintain control.', icon: 'people' }
+		{ title: 'Cost-Effective', body: 'Avoid significant expenses associated with prolonged litigation.', icon: 'dollar' },
+		{ title: 'Time-Saving', body: 'Resolve disputes faster and move forward efficiently.', icon: 'clock' },
+		{ title: 'Confidential', body: 'Discussions and details remain private.', icon: 'lock' },
+		{ title: 'Collaborative', body: 'A process that allows both sides to maintain control.', icon: 'people' }
 	];
 </script>
 

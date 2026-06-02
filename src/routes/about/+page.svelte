@@ -56,21 +56,20 @@
 </svelte:head>
 
 <section class="hero">
-	<div class="container hero-grid">
+	<img
+		class="hero-bg"
+		src="{base}/images/hero-mediator.png"
+		alt="Seated portrait of John F. Gelson"
+		width="1672"
+		height="941"
+	/>
+	<div class="container hero-inner">
 		<div class="hero-copy">
 			<p class="eyebrow">About</p>
 			<h1>About John F. Gelson</h1>
 			<p class="roles">Mediator &bull; Trial Attorney &bull; Business Counsel</p>
 			<span class="rule"></span>
 			<p class="since">Serving New Jersey &amp; New York since 1995</p>
-		</div>
-		<div class="hero-portrait">
-			<img
-				src="{base}/images/john-gelson-portrait.png"
-				alt="Seated portrait of John F. Gelson"
-				width="819"
-				height="819"
-			/>
 		</div>
 	</div>
 </section>
@@ -145,16 +144,44 @@
 
 <style>
 	.hero {
-		background: linear-gradient(180deg, var(--off-white), var(--warm-gray));
+		display: grid;
+		overflow: hidden;
+		background: var(--off-white);
 		border-bottom: 1px solid var(--hairline);
 	}
 
-	.hero-grid {
-		display: grid;
-		grid-template-columns: 1.1fr 0.9fr;
-		align-items: center;
-		gap: clamp(2rem, 5vw, 4rem);
-		padding-block: clamp(3rem, 6vw, 5rem);
+	.hero > *,
+	.hero::after {
+		grid-area: 1 / 1;
+	}
+
+	.hero-bg {
+		width: 100%;
+		height: auto;
+		align-self: end;
+		display: block;
+	}
+
+	.hero::after {
+		content: '';
+		z-index: 1;
+		background: linear-gradient(
+			90deg,
+			var(--off-white) 0%,
+			rgba(248, 247, 244, 0.65) 32%,
+			rgba(248, 247, 244, 0) 60%
+		);
+		pointer-events: none;
+	}
+
+	.hero-inner {
+		z-index: 2;
+		align-self: center;
+		padding-block: clamp(2rem, 4vw, 3.25rem);
+	}
+
+	.hero-copy {
+		max-width: 500px;
 	}
 
 	.hero-copy h1 {
@@ -173,12 +200,6 @@
 		font-family: var(--font-heading);
 		color: var(--text-muted);
 		margin: 0;
-	}
-
-	.hero-portrait img {
-		width: 100%;
-		border-radius: var(--radius);
-		box-shadow: 0 30px 60px -30px rgba(28, 46, 74, 0.45);
 	}
 
 	.intro {
@@ -317,14 +338,31 @@
 	}
 
 	@media (max-width: 860px) {
-		.hero-grid,
+		.hero {
+			display: flex;
+			flex-direction: column;
+		}
+		.hero > * {
+			grid-area: auto;
+		}
+		.hero-inner {
+			order: 1;
+			align-self: auto;
+			z-index: auto;
+		}
+		.hero-bg {
+			order: 2;
+			align-self: auto;
+		}
+		.hero::after {
+			display: none;
+		}
+		.hero-copy {
+			max-width: 100%;
+		}
 		.intro-grid,
 		.cred-grid {
 			grid-template-columns: 1fr;
-		}
-		.hero-portrait {
-			order: -1;
-			max-width: 440px;
 		}
 	}
 </style>

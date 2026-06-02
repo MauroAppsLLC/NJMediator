@@ -141,8 +141,8 @@
 				<p class="eyebrow">Our Office</p>
 				<span class="rule"></span>
 				<p>
-					Conveniently located in Little Silver, New Jersey, our office serves clients throughout
-					New Jersey and New York.
+			Conveniently located in Little Silver, New Jersey, serving clients throughout New Jersey
+				and New York.
 				</p>
 				<a class="btn btn--ghost" href={directionsUrl} target="_blank" rel="noreferrer">
 					Get Directions
@@ -154,7 +154,7 @@
 
 <section class="section-dark closing">
 	<div class="container">
-		<p class="closing-line">Experienced mediation. Practical solutions. Lasting results.</p>
+		<p class="closing-line">Experienced mediation. Practical solutions. Efficient outcomes.</p>
 		<span class="rule rule--center"></span>
 	</div>
 </section>

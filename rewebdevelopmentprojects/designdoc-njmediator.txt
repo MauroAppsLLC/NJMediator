@@ -1,0 +1,253 @@
+JOHN F. GELSON — WEBSITE BUILD PACKAGE
+PROJECT OVERVIEW
+Website redesign for:
+John F. Gelson Mediator • Trial Attorney • Business Counsel
+Goal: Create a modern, refined, professional mediation website that reflects:
+deep legal experience
+credibility and authority
+approachable personality
+practical dispute resolution style
+The site should feel:
+elegant
+calm
+intelligent
+trustworthy
+human
+Avoid:
+overly corporate law firm aesthetics
+flashy marketing style
+emotional family-law branding
+cluttered layouts
+stock-heavy visuals
+Core positioning:
+“The mediator everyone wants in the room.”
+This line should be treated as the brand anchor.
+
+DESIGN DIRECTION
+Visual Style
+Modern editorial aesthetic
+Sophisticated but approachable
+Minimalist layout with generous white space
+Strong typography-driven design
+Soft neutral backgrounds
+Real photography only
+The design should feel more like:
+a distinguished professional profile
+a high-end mediation practice
+a refined private counsel website
+NOT:
+aggressive litigation branding
+flashy corporate consulting
+generic law templates
+
+COLOR PALETTE
+Primary Colors
+Off White: #F8F7F4 Warm Gray: #EAE7E2 Charcoal: #1F2430 Navy Accent: #1C2E4A Muted Gold Accent: #B0895A
+
+TYPOGRAPHY
+Headings
+Playfair Display
+Body
+Inter
+Typography should carry much of the visual sophistication.
+
+NAVIGATION
+Top Navigation:
+Home
+About
+Practice
+Contact
+Minimal clean header. Sticky navigation preferred.
+
+HOME PAGE STRUCTURE
+HERO SECTION
+Use John’s real portrait photo.
+Headline:
+“The mediator everyone wants in the room.”
+Subheadline:
+Resolving complex disputes with experience, credibility, and a style that puts people at ease.
+Trust line beneath:
+Serving New Jersey & New York | 30+ Years of Experience | Court-Appointed Since 1995
+Layout:
+Text on left
+John’s image on right
+Very clean spacing
+No heavy overlays
+
+STATS SECTION
+Four-column statistics row:
+30+ Years Experience
+1000+ Disputes Mediated
+800+ Disputes Resolved
+1995 Court-Appointed Since
+Minimal styling. No excessive icons.
+
+MEDIATION OVER LITIGATION SECTION
+Four-column layout:
+Cost-Effective
+Avoid significant expenses associated with prolonged litigation.
+Time-Saving
+Resolve disputes faster and move forward efficiently.
+Confidential
+Discussions and details remain private.
+Collaborative
+A process that allows both sides to maintain control.
+
+CLOSING SECTION
+Dark navy background.
+Text:
+Experienced mediation. Practical solutions. Efficient outcomes.
+Subtext: Helping people resolve complex disputes across New Jersey and New York.
+
+ABOUT PAGE STRUCTURE
+The About page should NOT repeat the homepage.
+It should feel:
+more personal
+more professional biography focused
+more CV/editorial style
+No repeated statistics section. No repeated mediation-over-litigation section.
+
+ABOUT HERO SECTION
+Headline:
+About John F. Gelson
+Subheadline:
+Mediator • Trial Attorney • Business Counsel
+Small line:
+Serving New Jersey & New York since 1995
+Use John’s seated portrait image.
+
+INTRODUCTION SECTION
+John F. Gelson has served as a mediator, trial attorney, business counsel, and legal advisor for more than four decades.
+Since 1995, he has conducted more than 1,500 mediations across commercial, construction, employment, franchise, and complex business disputes.
+Known for his practical judgment, calm demeanor, and ability to resolve difficult matters efficiently, John is trusted by attorneys, business leaders, insurance carriers, and private clients throughout New Jersey and New York.
+
+PROFESSIONAL EXPERIENCE SECTION
+VP & General Counsel
+Jersey Mike’s Franchise Systems, Inc. 2011–2025
+Served as General Counsel during the company’s expansion from 300 locations to more than 3,500 restaurants and $3.5 billion in sales.
+Guided legal matters through the company’s $8 billion acquisition by Blackstone.
+
+Founder
+NJ Mediator Resolution Services 1995–Present
+Conducted more than 1,500 mediations across commercial, construction, employment, franchise, and complex civil matters.
+
+Senior Partner
+McLaughlin, Bennett & Gelson 1993–2012
+
+Senior Partner
+Rothstein, Mandell, Strohm & Gelson 1981–1993
+Tried more than 100 jury and non-jury cases in federal and state courts.
+
+CERTIFICATIONS & RECOGNITION
+Certified by the Supreme Court of New Jersey as a Court-Appointed Mediator since 1995
+AV Rated by Martindale-Hubbell™
+Best Lawyers in America™
+New Jersey Super Lawyer™
+National Association of Distinguished Mediators
+
+EDUCATION
+University of Notre Dame B.A., English
+Drake University Law School J.D.
+London School of Economics International Law
+
+FINAL IMAGE SECTION
+Use elegant dark image section.
+Text:
+“The mediator everyone wants in the room.”
+Minimal. No CTA needed.
+
+PRACTICE PAGE STRUCTURE
+The Practice page should feel:
+refined
+highly professional
+practical
+organized
+Avoid excessive legal copy.
+
+HERO SECTION
+Headline:
+Practice Areas
+Subheadline:
+John mediates a wide range of commercial and civil disputes throughout New Jersey and New York.
+
+AREAS OF MEDIATION
+Commercial Disputes
+Business conflicts, partnership disagreements, contract disputes, shareholder issues, and corporate matters.
+Construction Disputes
+Delay claims, construction defects, payment disputes, contract interpretation, and project conflicts.
+Employment Disputes
+Workplace claims, wrongful termination, discrimination, wage and hour disputes, and executive matters.
+Franchise Disputes
+Franchisor–franchisee conflicts, operations disputes, territory matters, and franchise agreement issues.
+Personal Injury
+Complex injury matters including premises liability, motor vehicle, and general liability claims.
+
+SELECTED RESOLUTIONS
+$4.6M Construction Dispute
+$3.0M Commercial Settlement
+$2.2M Employment Dispute
+Minimal premium layout.
+
+WHY MEDIATION
+Cost-Effective
+Time-Saving
+Confidential
+Collaborative
+Keep concise and minimal.
+
+FINAL SECTION
+Experienced mediation. Practical solutions. Efficient outcomes.
+
+CONTACT PAGE STRUCTURE
+HERO SECTION
+Headline:
+Let’s Start a Conversation.
+Subheadline:
+John Gelson is available to discuss your case and explore how mediation can help you reach a practical resolution.
+Use office/law imagery.
+
+CONTACT INFORMATION
+34 Sycamore Avenue, Suite 1C Little Silver, NJ 07739
+Phone: 732-919-1044 Fax: 732-212-1122
+jgelson@njmediator.com
+www.njmediator.com
+
+CONTACT FORM
+Fields:
+Name
+Email
+Phone
+Subject
+Message
+Button: Send Message
+Small note: All inquiries are confidential.
+
+OFFICE SECTION
+Conveniently located in Little Silver, New Jersey, serving clients throughout New Jersey and New York.
+Optional embedded map.
+
+IMAGE DIRECTION
+Use ONLY real photography.
+Preferred imagery:
+John’s professional portraits
+office desk details
+legal notebooks
+subtle office interiors
+understated professional atmosphere
+Avoid:
+handshake stock photos
+courtroom drama imagery
+aggressive legal visuals
+overly corporate boardroom imagery
+
+OVERALL BRAND IMPRESSION
+The website should feel like:
+“Highly respected professional. Easy to work with. Trusted to resolve difficult matters.”
+The site should communicate:
+confidence
+calm authority
+professionalism
+trust
+practical problem solving
+approachability
+The overall experience should feel elevated, restrained, and timeless.

@@ -14,7 +14,7 @@
 	const advantages = [
 		{
 			title: 'Cost-Effective',
-			body: 'Avoid the significant expenses associated with prolonged litigation.'
+			body: 'Avoid significant expenses associated with prolonged litigation.'
 		},
 		{
 			title: 'Time-Saving',
@@ -40,7 +40,14 @@
 </svelte:head>
 
 <section class="hero">
-	<div class="container hero-grid">
+	<img
+		class="hero-bg"
+		src="{base}/images/hero-mediator.png"
+		alt="Portrait of John F. Gelson, mediator and trial attorney"
+		width="1672"
+		height="941"
+	/>
+	<div class="container hero-inner">
 		<div class="hero-copy">
 			<h1>The mediator everyone<br />wants in the room.</h1>
 			<span class="rule"></span>
@@ -56,14 +63,6 @@
 				<a class="btn" href="/contact">Schedule a Consultation</a>
 				<a class="btn btn--ghost" href="/about">About John</a>
 			</div>
-		</div>
-		<div class="hero-portrait">
-			<img
-				src="{base}/images/john-gelson-portrait.png"
-				alt="Portrait of John F. Gelson, mediator and trial attorney"
-				width="819"
-				height="819"
-			/>
 		</div>
 	</div>
 </section>
@@ -93,19 +92,48 @@
 
 <style>
 	.hero {
-		background: linear-gradient(180deg, var(--off-white), var(--warm-gray));
+		display: grid;
+		overflow: hidden;
+		background: var(--off-white);
 		border-bottom: 1px solid var(--hairline);
 	}
 
-	.hero-grid {
-		display: grid;
-		grid-template-columns: 1.05fr 0.95fr;
-		align-items: center;
-		gap: clamp(2rem, 5vw, 4.5rem);
-		padding-block: clamp(3rem, 6vw, 5.5rem);
+	.hero > *,
+	.hero::after {
+		grid-area: 1 / 1;
+	}
+
+	.hero-bg {
+		width: 100%;
+		height: auto;
+		align-self: end;
+		display: block;
+	}
+
+	.hero::after {
+		content: '';
+		z-index: 1;
+		background: linear-gradient(
+			90deg,
+			var(--off-white) 0%,
+			rgba(248, 247, 244, 0.65) 32%,
+			rgba(248, 247, 244, 0) 60%
+		);
+		pointer-events: none;
+	}
+
+	.hero-inner {
+		z-index: 2;
+		align-self: center;
+		padding-block: clamp(2rem, 4vw, 3.25rem);
+	}
+
+	.hero-copy {
+		max-width: 500px;
 	}
 
 	.hero-copy h1 {
+		font-size: clamp(2.1rem, 4.5vw, 3.25rem);
 		color: var(--navy);
 	}
 
@@ -128,12 +156,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
-	}
-
-	.hero-portrait img {
-		width: 100%;
-		border-radius: var(--radius);
-		box-shadow: 0 30px 60px -30px rgba(28, 46, 74, 0.45);
 	}
 
 	.stats-section {
@@ -160,12 +182,27 @@
 	}
 
 	@media (max-width: 860px) {
-		.hero-grid {
-			grid-template-columns: 1fr;
+		.hero {
+			display: flex;
+			flex-direction: column;
 		}
-		.hero-portrait {
-			order: -1;
-			max-width: 460px;
+		.hero > * {
+			grid-area: auto;
+		}
+		.hero-inner {
+			order: 1;
+			align-self: auto;
+			z-index: auto;
+		}
+		.hero-bg {
+			order: 2;
+			align-self: auto;
+		}
+		.hero::after {
+			display: none;
+		}
+		.hero-copy {
+			max-width: 100%;
 		}
 	}
 </style>
