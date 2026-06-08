@@ -40,32 +40,32 @@
 </svelte:head>
 
 <section class="hero">
-	<div class="hero-layout">
-		<div class="container hero-text-wrap">
-			<div class="hero-copy">
-				<h1>The mediator everyone<br />wants in the room.</h1>
-				<span class="rule"></span>
-				<p class="hero-sub">
-					Resolving complex disputes with experience, credibility, and a style that puts people at
-					ease.
-				</p>
-				<p class="trust">
-					Serving Across the United States &nbsp;|&nbsp; 30+ Years of Experience &nbsp;|&nbsp;
-					Court-Appointed Since 1995
-				</p>
-				<div class="hero-actions">
-					<a class="btn" href="/contact">Schedule a Consultation</a>
-					<a class="btn btn--ghost" href="/about">About John</a>
-				</div>
+	<picture>
+		<source media="(min-width: 1025px)" srcset="{base}/images/headshot-hero-long.png" />
+		<img
+			class="hero-bg"
+			src="{base}/images/headshot-main.png"
+			alt="John F. Gelson seated in chair"
+			width="1080"
+			height="904"
+		/>
+	</picture>
+	<div class="container hero-inner">
+		<div class="hero-copy">
+			<h1>The mediator everyone<br />wants in the room.</h1>
+			<span class="rule"></span>
+			<p class="hero-sub">
+				Resolving complex disputes with experience, credibility, and a style that puts people at
+				ease.
+			</p>
+			<p class="trust">
+				Serving Across the United States &nbsp;|&nbsp; 30+ Years of Experience &nbsp;|&nbsp;
+				Court-Appointed Since 1995
+			</p>
+			<div class="hero-actions">
+				<a class="btn" href="/contact">Schedule a Consultation</a>
+				<a class="btn btn--ghost-dark" href="/about">About John</a>
 			</div>
-		</div>
-		<div class="hero-img-wrap">
-			<img
-				src="{base}/images/headshot-main.png"
-				alt="Headshot of John F. Gelson, mediator and trial attorney"
-				width="1080"
-				height="904"
-			/>
 		</div>
 	</div>
 </section>
@@ -112,64 +112,52 @@
 
 <style>
 	.hero {
-		background: var(--off-white);
-		border-bottom: 1px solid var(--hairline);
-		overflow: hidden;
-	}
-
-	.hero-layout {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		max-width: 1400px;
-		margin-inline: auto;
-		min-height: clamp(420px, 52vh, 560px);
+		overflow: hidden;
+		border-bottom: 1px solid var(--hairline);
 	}
 
-	.hero-text-wrap {
+	.hero > * {
+		grid-area: 1 / 1;
+	}
+
+	.hero picture {
+		align-self: end;
+		position: relative;
+	}
+
+	.hero picture::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		box-shadow: inset 0 0 60px 30px var(--off-white);
+	}
+
+	.hero-bg {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.hero-inner {
+		z-index: 1;
 		align-self: center;
 		padding-block: clamp(2rem, 4vw, 3rem);
 	}
 
 	.hero-copy {
-		max-width: 480px;
-		margin-left: auto;
-		padding-right: clamp(1.5rem, 3vw, 3rem);
-	}
-
-	.hero-img-wrap {
-		position: relative;
-		overflow: hidden;
-	}
-
-	.hero-img-wrap::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: 1;
-		background:
-			linear-gradient(to left, transparent 70%, var(--off-white) 100%),
-			linear-gradient(to top, var(--off-white) 0%, transparent 30%),
-			linear-gradient(to bottom, rgba(248, 247, 244, 0.4) 0%, transparent 10%),
-			linear-gradient(to right, transparent 85%, rgba(248, 247, 244, 0.4) 100%);
-		pointer-events: none;
-	}
-
-	.hero-img-wrap img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center 15%;
-		display: block;
+		max-width: 460px;
 	}
 
 	.hero-copy h1 {
 		font-size: clamp(2.1rem, 4.5vw, 3.25rem);
-		color: var(--navy);
+		color: var(--charcoal);
 	}
 
 	.hero-sub {
 		font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-		color: var(--text-muted);
+		color: var(--charcoal);
 		max-width: 34ch;
 		margin-bottom: 1.5rem;
 	}
@@ -178,7 +166,7 @@
 		font-size: 0.78rem;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
-		color: var(--text-muted);
+		color: var(--navy);
 		margin-bottom: 2rem;
 	}
 
@@ -186,6 +174,17 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
+	}
+
+	.btn--ghost-dark {
+		background: transparent;
+		color: var(--navy);
+		border-color: var(--navy);
+	}
+
+	.btn--ghost-dark:hover {
+		background: var(--navy);
+		color: var(--text-on-dark);
 	}
 
 	.stats-section {
@@ -246,18 +245,29 @@
 		margin-bottom: 2rem;
 	}
 
-	@media (max-width: 860px) {
-		.hero-layout {
-			grid-template-columns: 1fr;
-			min-height: auto;
+	@media (max-width: 1024px) {
+		.hero {
+			display: flex;
+			flex-direction: column;
+			background: var(--off-white);
+		}
+		.hero picture {
+			order: 2;
+			max-width: 500px;
+			margin-inline: auto;
+		}
+		.hero-inner {
+			order: 1;
+			padding-block: clamp(2rem, 5vw, 3rem);
 		}
 		.hero-copy {
 			max-width: 100%;
-			margin-left: 0;
-			padding-right: 0;
 		}
-		.hero-img-wrap {
-			max-height: 400px;
+	}
+
+	@media (max-width: 480px) {
+		.hero-copy h1 {
+			font-size: clamp(1.8rem, 7vw, 2.4rem);
 		}
 	}
 </style>

@@ -183,9 +183,9 @@
 		z-index: 1;
 		background:
 			linear-gradient(to left, transparent 70%, var(--off-white) 100%),
-			linear-gradient(to top, var(--off-white) 0%, transparent 30%),
-			linear-gradient(to bottom, rgba(248, 247, 244, 0.4) 0%, transparent 10%),
-			linear-gradient(to right, transparent 85%, rgba(248, 247, 244, 0.4) 100%);
+			linear-gradient(to top, rgba(248, 247, 244, 0.5) 0%, transparent 15%),
+			linear-gradient(to bottom, rgba(248, 247, 244, 0.6) 0%, transparent 18%),
+			linear-gradient(to right, transparent 55%, var(--off-white) 100%);
 		pointer-events: none;
 	}
 
