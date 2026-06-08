@@ -16,7 +16,7 @@
 			org: 'NJ Mediator Resolution Services',
 			period: '1995 – Present',
 			detail:
-				'Conducted more than 1,500 mediations across commercial, construction, employment, franchise, and complex civil matters.'
+				'Conducted more than 1,500 mediations across franchise, commercial, construction, and complex civil matters.'
 		},
 		{
 			role: 'Senior Partner',
@@ -56,20 +56,23 @@
 </svelte:head>
 
 <section class="hero">
-	<img
-		class="hero-bg"
-		src="{base}/images/hero-mediator.png"
-		alt="Seated portrait of John F. Gelson"
-		width="1672"
-		height="941"
-	/>
-	<div class="container hero-inner">
-		<div class="hero-copy">
-			<p class="eyebrow">About</p>
-			<h1>About John F. Gelson</h1>
-			<p class="roles">Mediator &bull; Trial Attorney &bull; Business Counsel</p>
-			<span class="rule"></span>
-			<p class="since">Serving New Jersey &amp; New York since 1995</p>
+	<div class="hero-layout">
+		<div class="container hero-text-wrap">
+			<div class="hero-copy">
+				<p class="eyebrow">About</p>
+				<h1 class="name-single-line">John F. Gelson</h1>
+				<p class="roles">Mediator &bull; Trial Attorney &bull; Business Counsel</p>
+				<span class="rule"></span>
+				<p class="since">Serving across the United States since 1995</p>
+			</div>
+		</div>
+		<div class="hero-img-wrap">
+			<img
+				src="{base}/images/headshot-main.png"
+				alt="Seated portrait of John F. Gelson"
+				width="1080"
+				height="904"
+			/>
 		</div>
 	</div>
 </section>
@@ -88,7 +91,7 @@
 			<p>
 				Known for his practical judgment, calm demeanor, and ability to resolve difficult matters
 				efficiently, John is trusted by attorneys, business leaders, insurance carriers, and private
-				clients throughout New Jersey and New York.
+				clients throughout the United States.
 			</p>
 		</div>
 
@@ -144,48 +147,62 @@
 
 <style>
 	.hero {
-		display: grid;
-		overflow: hidden;
 		background: var(--off-white);
 		border-bottom: 1px solid var(--hairline);
+		overflow: hidden;
 	}
 
-	.hero > *,
-	.hero::after {
-		grid-area: 1 / 1;
+	.hero-layout {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		max-width: 1400px;
+		margin-inline: auto;
+		min-height: clamp(420px, 52vh, 560px);
 	}
 
-	.hero-bg {
-		width: 100%;
-		height: auto;
-		align-self: end;
-		display: block;
-	}
-
-	.hero::after {
-		content: '';
-		z-index: 1;
-		background: linear-gradient(
-			90deg,
-			var(--off-white) 0%,
-			rgba(248, 247, 244, 0.65) 32%,
-			rgba(248, 247, 244, 0) 60%
-		);
-		pointer-events: none;
-	}
-
-	.hero-inner {
-		z-index: 2;
+	.hero-text-wrap {
 		align-self: center;
-		padding-block: clamp(2rem, 4vw, 3.25rem);
+		padding-block: clamp(2rem, 4vw, 3rem);
 	}
 
 	.hero-copy {
-		max-width: 500px;
+		max-width: 480px;
+		margin-left: auto;
+		padding-right: clamp(1.5rem, 3vw, 3rem);
+	}
+
+	.hero-img-wrap {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero-img-wrap::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		background:
+			linear-gradient(to left, transparent 70%, var(--off-white) 100%),
+			linear-gradient(to top, var(--off-white) 0%, transparent 30%),
+			linear-gradient(to bottom, rgba(248, 247, 244, 0.4) 0%, transparent 10%),
+			linear-gradient(to right, transparent 85%, rgba(248, 247, 244, 0.4) 100%);
+		pointer-events: none;
+	}
+
+	.hero-img-wrap img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 15%;
+		display: block;
 	}
 
 	.hero-copy h1 {
 		color: var(--navy);
+	}
+
+	.name-single-line {
+		white-space: nowrap;
 	}
 
 	.roles {
@@ -338,27 +355,17 @@
 	}
 
 	@media (max-width: 860px) {
-		.hero {
-			display: flex;
-			flex-direction: column;
-		}
-		.hero > * {
-			grid-area: auto;
-		}
-		.hero-inner {
-			order: 1;
-			align-self: auto;
-			z-index: auto;
-		}
-		.hero-bg {
-			order: 2;
-			align-self: auto;
-		}
-		.hero::after {
-			display: none;
+		.hero-layout {
+			grid-template-columns: 1fr;
+			min-height: auto;
 		}
 		.hero-copy {
 			max-width: 100%;
+			margin-left: 0;
+			padding-right: 0;
+		}
+		.hero-img-wrap {
+			max-height: 400px;
 		}
 		.intro-grid,
 		.cred-grid {

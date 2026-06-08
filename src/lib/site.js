@@ -10,7 +10,7 @@ export const site = {
 		street: '34 Sycamore Avenue, Suite 1C',
 		city: 'Little Silver, NJ 07739'
 	},
-	region: 'Serving New Jersey & New York'
+	region: 'Serving the United States'
 };
 
 export const nav = [

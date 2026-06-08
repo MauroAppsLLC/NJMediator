@@ -40,37 +40,57 @@
 </svelte:head>
 
 <section class="hero">
-	<img
-		class="hero-bg"
-		src="{base}/images/hero-mediator.png"
-		alt="Portrait of John F. Gelson, mediator and trial attorney"
-		width="1672"
-		height="941"
-	/>
-	<div class="container hero-inner">
-		<div class="hero-copy">
-			<h1>The mediator everyone<br />wants in the room.</h1>
-			<span class="rule"></span>
-			<p class="hero-sub">
-				Resolving complex disputes with experience, credibility, and a style that puts people at
-				ease.
-			</p>
-			<p class="trust">
-				Serving New Jersey &amp; New York &nbsp;|&nbsp; 30+ Years of Experience &nbsp;|&nbsp;
-				Court-Appointed Since 1995
-			</p>
-			<div class="hero-actions">
-				<a class="btn" href="/contact">Schedule a Consultation</a>
-				<a class="btn btn--ghost" href="/about">About John</a>
+	<div class="hero-layout">
+		<div class="container hero-text-wrap">
+			<div class="hero-copy">
+				<h1>The mediator everyone<br />wants in the room.</h1>
+				<span class="rule"></span>
+				<p class="hero-sub">
+					Resolving complex disputes with experience, credibility, and a style that puts people at
+					ease.
+				</p>
+				<p class="trust">
+					Serving Across the United States &nbsp;|&nbsp; 30+ Years of Experience &nbsp;|&nbsp;
+					Court-Appointed Since 1995
+				</p>
+				<div class="hero-actions">
+					<a class="btn" href="/contact">Schedule a Consultation</a>
+					<a class="btn btn--ghost" href="/about">About John</a>
+				</div>
 			</div>
+		</div>
+		<div class="hero-img-wrap">
+			<img
+				src="{base}/images/headshot-main.png"
+				alt="Headshot of John F. Gelson, mediator and trial attorney"
+				width="1080"
+				height="904"
+			/>
 		</div>
 	</div>
 </section>
 
 <section class="section stats-section">
 	<div class="container">
-		<SectionRule eyebrow="Why Clients Choose John" title="A trusted mediator serving NJ & NY" center />
+		<SectionRule eyebrow="Why Clients Choose John" title="A trusted mediator serving across the United States" center />
 		<StatGrid items={stats} />
+	</div>
+</section>
+
+<section class="section press">
+	<div class="container press-inner">
+		<p class="eyebrow">In the News</p>
+		<h2 class="press-title">
+			<a
+				href="https://www.law.com/corpcounsel/2025/06/12/ex-prison-guard-who-became-jersey-mikes-gc-returns-to-mediation-roots-after-8b-blackstone-sale/?slreturn=20260603151235"
+				target="_blank"
+				rel="noreferrer"
+			>
+				GC Returns to Mediation Roots After $8B Blackstone Sale
+				<svg class="link-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 15 15 5M15 5H7M15 5v8"/></svg>
+			</a>
+		</h2>
+		<span class="rule rule--center"></span>
 	</div>
 </section>
 
@@ -92,44 +112,54 @@
 
 <style>
 	.hero {
-		display: grid;
-		overflow: hidden;
 		background: var(--off-white);
 		border-bottom: 1px solid var(--hairline);
+		overflow: hidden;
 	}
 
-	.hero > *,
-	.hero::after {
-		grid-area: 1 / 1;
+	.hero-layout {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		max-width: 1400px;
+		margin-inline: auto;
+		min-height: clamp(420px, 52vh, 560px);
 	}
 
-	.hero-bg {
-		width: 100%;
-		height: auto;
-		align-self: end;
-		display: block;
-	}
-
-	.hero::after {
-		content: '';
-		z-index: 1;
-		background: linear-gradient(
-			90deg,
-			var(--off-white) 0%,
-			rgba(248, 247, 244, 0.65) 32%,
-			rgba(248, 247, 244, 0) 60%
-		);
-		pointer-events: none;
-	}
-
-	.hero-inner {
-		z-index: 2;
+	.hero-text-wrap {
 		align-self: center;
-		padding-block: clamp(2rem, 4vw, 3.25rem);
+		padding-block: clamp(2rem, 4vw, 3rem);
 	}
 
 	.hero-copy {
-		max-width: 500px;
+		max-width: 480px;
+		margin-left: auto;
+		padding-right: clamp(1.5rem, 3vw, 3rem);
+	}
+
+	.hero-img-wrap {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero-img-wrap::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		background:
+			linear-gradient(to left, transparent 70%, var(--off-white) 100%),
+			linear-gradient(to top, var(--off-white) 0%, transparent 30%),
+			linear-gradient(to bottom, rgba(248, 247, 244, 0.4) 0%, transparent 10%),
+			linear-gradient(to right, transparent 85%, rgba(248, 247, 244, 0.4) 100%);
+		pointer-events: none;
+	}
+
+	.hero-img-wrap img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 15%;
+		display: block;
 	}
 
 	.hero-copy h1 {
@@ -163,6 +193,41 @@
 		border-bottom: 1px solid var(--hairline);
 	}
 
+	.press {
+		background: var(--warm-gray);
+		border-bottom: 1px solid var(--hairline);
+	}
+
+	.press-inner {
+		text-align: center;
+	}
+
+	.press-title {
+		max-width: 28ch;
+		margin-inline: auto;
+	}
+
+	.press-title a {
+		transition: color 0.2s ease;
+	}
+
+	.press-title a:hover {
+		color: var(--gold);
+	}
+
+	.link-arrow {
+		display: inline-block;
+		width: 0.65em;
+		height: 0.65em;
+		margin-left: 0.3em;
+		vertical-align: 0.15em;
+		transition: transform 0.2s ease;
+	}
+
+	.press-title a:hover .link-arrow {
+		transform: translate(2px, -2px);
+	}
+
 	.litigation {
 		background: var(--off-white);
 	}
@@ -182,27 +247,17 @@
 	}
 
 	@media (max-width: 860px) {
-		.hero {
-			display: flex;
-			flex-direction: column;
-		}
-		.hero > * {
-			grid-area: auto;
-		}
-		.hero-inner {
-			order: 1;
-			align-self: auto;
-			z-index: auto;
-		}
-		.hero-bg {
-			order: 2;
-			align-self: auto;
-		}
-		.hero::after {
-			display: none;
+		.hero-layout {
+			grid-template-columns: 1fr;
+			min-height: auto;
 		}
 		.hero-copy {
 			max-width: 100%;
+			margin-left: 0;
+			padding-right: 0;
+		}
+		.hero-img-wrap {
+			max-height: 400px;
 		}
 	}
 </style>

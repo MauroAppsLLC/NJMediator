@@ -4,6 +4,12 @@
 
 	const areas = [
 		{
+			title: 'Franchise Disputes',
+			body: 'A uniquely experienced Franchise Mediator. When disputes arise over Franchise Agreements, generalist mediators often struggle to bridge the gap. It requires a specialist\u2014a neutral who understands the unique regulatory landscape, the inherent power dynamics, and the commercial realities of the franchise model.',
+			extended: 'John Gelson is a franchise mediator who speaks the language of both the C-suite and the local operator. He doesn\u2019t just evaluate the legal merits of the contract; he looks for business-driven solutions.\n\nAs Jersey Mike\u2019s General Counsel for 15 years, John led a legal team as Jersey Mike\u2019s accelerated its footprint from 250 restaurants to over 3,200 nationwide locations\u2014the fastest-growing sandwich chain in the United States. During John\u2019s tenure, Jersey Mike\u2019s had no litigation or arbitrations with any of its franchisees under the FTC Franchise Rule. John remained with Jersey Mike\u2019s and managed its acquisition by Blackstone in 2024 for $8 billion dollars. He remains a franchisee of Jersey Mike\u2019s.\n\nJohn has lectured extensively on franchise mediation, including at the ABA Forum on Franchising, and has taught mediation at Ave Maria Law School.',
+			icon: 'store'
+		},
+		{
 			title: 'Commercial Disputes',
 			body: 'Business conflicts, partnership disagreements, contract disputes, shareholder issues, and corporate matters.',
 			icon: 'briefcase'
@@ -17,21 +23,11 @@
 			title: 'Employment Disputes',
 			body: 'Workplace claims, wrongful termination, discrimination, wage and hour disputes, and executive matters.',
 			icon: 'people'
-		},
-		{
-			title: 'Franchise Disputes',
-			body: 'Franchisor–franchisee conflicts, operations disputes, territory matters, and franchise agreement issues.',
-			icon: 'store'
-		},
-		{
-			title: 'Personal Injury',
-			body: 'Complex injury matters including premises liability, motor vehicle, and general liability claims.',
-			icon: 'scales'
 		}
 	];
 
 	const resolutions = [
-		{ value: '$4.6M', label: 'Construction Dispute' },
+		{ value: '$11.2M', label: 'Construction Dispute' },
 		{ value: '$3.0M', label: 'Commercial Settlement' },
 		{ value: '$2.2M', label: 'Employment Dispute' }
 	];
@@ -79,8 +75,7 @@
 			<h1>Practice Areas</h1>
 			<span class="rule"></span>
 			<p class="lede">
-				John mediates a wide range of commercial and civil disputes throughout New Jersey and New
-				York.
+				John mediates a wide range of commercial and civil disputes across the United States.
 			</p>
 		</div>
 		<div class="hero-media">
@@ -92,13 +87,29 @@
 <section class="section areas">
 	<div class="container">
 		<SectionRule title="Areas of Mediation" center />
+
+		{#each areas as area}
+			{#if area.extended}
+				<article class="area-featured">
+					<span class="area-icon area-icon--featured" aria-hidden="true">{@render icon(area.icon)}</span>
+					<h3>{area.title}</h3>
+					<p class="area-featured-intro">{area.body}</p>
+					{#each area.extended.split('\n\n') as paragraph}
+						<p>{paragraph}</p>
+					{/each}
+				</article>
+			{/if}
+		{/each}
+
 		<div class="area-grid">
 			{#each areas as area}
-				<article class="area">
-					<span class="area-icon" aria-hidden="true">{@render icon(area.icon)}</span>
-					<h3>{area.title}</h3>
-					<p>{area.body}</p>
-				</article>
+				{#if !area.extended}
+					<article class="area">
+						<span class="area-icon" aria-hidden="true">{@render icon(area.icon)}</span>
+						<h3>{area.title}</h3>
+						<p>{area.body}</p>
+					</article>
+				{/if}
 			{/each}
 		</div>
 	</div>
@@ -140,7 +151,7 @@
 	<div class="container">
 		<h2>Experienced mediation.<br />Practical solutions.<br />Efficient outcomes.</h2>
 		<span class="rule"></span>
-		<p>Helping people resolve complex disputes across New Jersey and New York.</p>
+		<p>Helping people resolve complex disputes across the United States.</p>
 	</div>
 </section>
 
@@ -166,9 +177,42 @@
 		background: #fff;
 	}
 
+	.area-featured {
+		max-width: 720px;
+		margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+		text-align: center;
+		padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+		border-bottom: 1px solid var(--hairline);
+	}
+
+	.area-featured h3 {
+		font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+		margin-bottom: 1rem;
+	}
+
+	.area-featured-intro {
+		font-size: 1.05rem;
+		color: var(--text);
+		font-weight: 500;
+		margin-bottom: 1.25rem;
+	}
+
+	.area-featured p {
+		font-size: 0.95rem;
+		color: var(--text-muted);
+		line-height: 1.7;
+		text-align: left;
+	}
+
+	.area-icon--featured {
+		width: 48px;
+		height: 48px;
+		margin-bottom: 1.25rem;
+	}
+
 	.area-grid {
 		display: grid;
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: 0;
 	}
 
@@ -312,14 +356,16 @@
 
 	@media (max-width: 900px) {
 		.area-grid {
-			grid-template-columns: repeat(2, 1fr);
-			gap: 2rem 0;
+			grid-template-columns: 1fr;
+			gap: 0;
 		}
-		.area:nth-child(odd) {
-			border-right: 1px solid var(--hairline);
-		}
-		.area:nth-child(even) {
+		.area {
 			border-right: 0;
+			padding-block: 1.5rem;
+			border-bottom: 1px solid var(--hairline);
+		}
+		.area:last-child {
+			border-bottom: 0;
 		}
 		.why-grid {
 			grid-template-columns: repeat(2, 1fr);

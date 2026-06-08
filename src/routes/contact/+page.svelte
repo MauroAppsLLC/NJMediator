@@ -1,16 +1,11 @@
 <script>
 	import { site } from '$lib/site.js';
-	import ImageSlot from '$lib/components/ImageSlot.svelte';
 
 	let name = $state('');
 	let email = $state('');
 	let phone = $state('');
 	let subject = $state('');
 	let message = $state('');
-
-	const directionsUrl =
-		'https://www.google.com/maps/dir/?api=1&destination=' +
-		encodeURIComponent(`${site.address.street}, ${site.address.city}`);
 
 	function sendMessage(event) {
 		event.preventDefault();
@@ -51,9 +46,6 @@
 				John Gelson is available to discuss your case and explore how mediation can help you reach a
 				practical resolution.
 			</p>
-		</div>
-		<div class="hero-media">
-			<ImageSlot caption="Office interior — desk, framed art, and legal volumes" ratio="4 / 3" />
 		</div>
 	</div>
 </section>
@@ -131,27 +123,6 @@
 	</div>
 </section>
 
-<section class="office">
-	<div class="office-grid">
-		<div class="map">
-			<ImageSlot caption="Map — Little Silver, New Jersey" ratio="1 / 1" rounded={false} />
-		</div>
-		<div class="office-copy">
-			<div class="container--narrow office-inner">
-				<p class="eyebrow">Our Office</p>
-				<span class="rule"></span>
-				<p>
-			Conveniently located in Little Silver, New Jersey, serving clients throughout New Jersey
-				and New York.
-				</p>
-				<a class="btn btn--ghost" href={directionsUrl} target="_blank" rel="noreferrer">
-					Get Directions
-				</a>
-			</div>
-		</div>
-	</div>
-</section>
-
 <section class="section-dark closing">
 	<div class="container">
 		<p class="closing-line">Experienced mediation. Practical solutions. Efficient outcomes.</p>
@@ -166,11 +137,8 @@
 	}
 
 	.hero-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		align-items: center;
-		gap: clamp(2rem, 5vw, 4rem);
 		padding-block: clamp(3rem, 6vw, 4.5rem);
+		max-width: 600px;
 	}
 
 	.hero-copy h1 {
@@ -311,32 +279,6 @@
 		border: 0;
 	}
 
-	.office-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		align-items: stretch;
-	}
-
-	.map :global(.frame) {
-		height: 100%;
-	}
-
-	.office-copy {
-		background: var(--off-white);
-		display: flex;
-		align-items: center;
-		padding: clamp(2.5rem, 6vw, 5rem) var(--gutter);
-	}
-
-	.office-inner {
-		max-width: 460px;
-	}
-
-	.office-copy p {
-		color: var(--text-muted);
-		margin-bottom: 1.75rem;
-	}
-
 	.closing {
 		text-align: center;
 		padding-block: clamp(3rem, 6vw, 5rem);
@@ -350,13 +292,8 @@
 	}
 
 	@media (max-width: 860px) {
-		.hero-grid,
-		.connect-grid,
-		.office-grid {
+		.connect-grid {
 			grid-template-columns: 1fr;
-		}
-		.map {
-			min-height: 320px;
 		}
 	}
 </style>
