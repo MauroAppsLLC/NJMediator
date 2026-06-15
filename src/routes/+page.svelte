@@ -35,22 +35,12 @@
 	<title>John F. Gelson | Mediator, Trial Attorney & Business Counsel — NJ & NY</title>
 	<meta
 		name="description"
-		content="John F. Gelson resolves complex disputes across New Jersey and New York with experience, credibility, and a style that puts people at ease. Court-appointed mediator since 1995."
+		content="John F. Gelson resolves complex disputes across the United States with experience, credibility, and a style that puts people at ease. Court-appointed mediator since 1995."
 	/>
 </svelte:head>
 
 <section class="hero">
-	<picture>
-		<source media="(min-width: 1025px)" srcset="{base}/images/headshot-hero-long.png" />
-		<img
-			class="hero-bg"
-			src="{base}/images/headshot-main.png"
-			alt="John F. Gelson seated in chair"
-			width="1080"
-			height="904"
-		/>
-	</picture>
-	<div class="container hero-inner">
+	<div class="container hero-grid">
 		<div class="hero-copy">
 			<h1>The mediator everyone<br />wants in the room.</h1>
 			<span class="rule"></span>
@@ -67,6 +57,14 @@
 				<a class="btn btn--ghost-dark" href="/about">About John</a>
 			</div>
 		</div>
+		<div class="hero-img-wrap">
+			<img
+				src="{base}/images/headshot-closeup.jpeg"
+				alt="Headshot of John F. Gelson"
+				width="2284"
+				height="3426"
+			/>
+		</div>
 	</div>
 </section>
 
@@ -79,7 +77,7 @@
 
 <section class="section press">
 	<div class="container press-inner">
-		<p class="eyebrow">In the News</p>
+		<p class="eyebrow">Headline</p>
 		<h2 class="press-title">
 			<a
 				href="https://www.law.com/corpcounsel/2025/06/12/ex-prison-guard-who-became-jersey-mikes-gc-returns-to-mediation-roots-after-8b-blackstone-sale/?slreturn=20260603151235"
@@ -105,49 +103,57 @@
 	<div class="container container--narrow">
 		<h2>Experienced mediation. Practical solutions. Efficient outcomes.</h2>
 		<span class="rule rule--center"></span>
-		<p>Helping people resolve complex disputes across New Jersey and New York.</p>
+		<p>Helping people resolve complex disputes across the United States.</p>
 		<a class="btn btn--on-dark" href="/contact">Schedule a Consultation</a>
 	</div>
 </section>
 
 <style>
 	.hero {
-		display: grid;
 		overflow: hidden;
 		border-bottom: 1px solid var(--hairline);
+		background: linear-gradient(
+			135deg,
+			rgba(28, 46, 74, 0.18) 0%,
+			rgba(28, 46, 74, 0.06) 30%,
+			var(--off-white) 50%,
+			rgba(176, 137, 90, 0.08) 70%,
+			rgba(176, 137, 90, 0.2) 100%
+		);
 	}
 
-	.hero > * {
-		grid-area: 1 / 1;
-	}
-
-	.hero picture {
-		align-self: end;
-		position: relative;
-	}
-
-	.hero picture::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-		box-shadow: inset 0 0 60px 30px var(--off-white);
-	}
-
-	.hero-bg {
-		width: 100%;
-		height: auto;
-		display: block;
-	}
-
-	.hero-inner {
-		z-index: 1;
-		align-self: center;
-		padding-block: clamp(2rem, 4vw, 3rem);
+	.hero-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		gap: 2rem;
 	}
 
 	.hero-copy {
 		max-width: 460px;
+		padding-block: clamp(3rem, 6vw, 5rem);
+	}
+
+	.hero-img-wrap {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero-img-wrap img {
+		-webkit-mask-image:
+			linear-gradient(to right, transparent, black 8%, black 92%, transparent),
+			linear-gradient(to bottom, transparent, black 6%, black 94%, transparent);
+		-webkit-mask-composite: destination-in;
+		mask-image:
+			linear-gradient(to right, transparent, black 8%, black 92%, transparent),
+			linear-gradient(to bottom, transparent, black 6%, black 94%, transparent);
+		mask-composite: intersect;
+	}
+
+	.hero-img-wrap img {
+		width: 100%;
+		height: auto;
+		display: block;
 	}
 
 	.hero-copy h1 {
@@ -245,23 +251,21 @@
 		margin-bottom: 2rem;
 	}
 
-	@media (max-width: 1024px) {
-		.hero {
-			display: flex;
-			flex-direction: column;
-			background: var(--off-white);
-		}
-		.hero picture {
-			order: 2;
-			max-width: 500px;
-			margin-inline: auto;
-		}
-		.hero-inner {
-			order: 1;
-			padding-block: clamp(2rem, 5vw, 3rem);
+	@media (max-width: 860px) {
+		.hero-grid {
+			grid-template-columns: 1fr;
+			text-align: center;
 		}
 		.hero-copy {
 			max-width: 100%;
+			padding-block: clamp(2rem, 5vw, 3rem) 0;
+		}
+		.hero-img-wrap {
+			max-width: 420px;
+			margin-inline: auto;
+		}
+		.hero-actions {
+			justify-content: center;
 		}
 	}
 
