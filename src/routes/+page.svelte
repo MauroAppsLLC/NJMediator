@@ -60,10 +60,10 @@
 		</div>
 		<div class="hero-img-wrap">
 			<img
-				src="{base}/images/headshot-closeup.jpeg"
-				alt="Headshot of John F. Gelson"
-				width="2284"
-				height="3426"
+				src="{base}/images/headshot-main.png"
+				alt="Seated portrait of John F. Gelson"
+				width="1080"
+				height="904"
 			/>
 		</div>
 	</div>
@@ -102,7 +102,7 @@
 
 <section class="section section-dark closing" use:reveal>
 	<div class="container container--narrow">
-		<h2>Experienced mediation. Practical solutions. Efficient outcomes.</h2>
+		<h2>Experienced mediator. Practical solutions. Efficient outcomes.</h2>
 		<span class="rule rule--center"></span>
 		<p>Helping people resolve complex disputes across the United States.</p>
 		<a class="btn btn--on-dark" href="/contact">Schedule a Consultation</a>
@@ -176,10 +176,10 @@
 			linear-gradient(
 				to right,
 				var(--hero-surface) 0%,
-				rgba(248, 247, 244, 0.58) 10%,
-				rgba(248, 247, 244, 0) 22%,
-				rgba(248, 247, 244, 0) 82%,
-				rgba(248, 247, 244, 0.58) 93%,
+				rgba(248, 247, 244, 0.85) 8%,
+				rgba(248, 247, 244, 0) 26%,
+				rgba(248, 247, 244, 0) 74%,
+				rgba(248, 247, 244, 0.85) 92%,
 				var(--hero-surface) 100%
 			),
 			linear-gradient(to bottom, rgba(248, 247, 244, 0) 76%, var(--hero-surface) 98%);
@@ -196,11 +196,13 @@
 		object-position: 50% 16%;
 		margin-left: auto;
 		-webkit-mask-image:
-			radial-gradient(ellipse at 57% 42%, black 0%, black 56%, rgba(0, 0, 0, 0.86) 66%, transparent 92%),
+			radial-gradient(ellipse at 57% 42%, black 0%, black 52%, rgba(0, 0, 0, 0.86) 64%, transparent 90%),
+			linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%),
 			linear-gradient(to bottom, black 0%, black 88%, transparent 100%);
 		-webkit-mask-composite: destination-in;
 		mask-image:
-			radial-gradient(ellipse at 57% 42%, black 0%, black 56%, rgba(0, 0, 0, 0.86) 66%, transparent 92%),
+			radial-gradient(ellipse at 57% 42%, black 0%, black 52%, rgba(0, 0, 0, 0.86) 64%, transparent 90%),
+			linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%),
 			linear-gradient(to bottom, black 0%, black 88%, transparent 100%);
 		mask-composite: intersect;
 	}

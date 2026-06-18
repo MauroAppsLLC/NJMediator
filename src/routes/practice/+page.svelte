@@ -7,7 +7,7 @@
 		{
 			title: 'Franchise Disputes',
 			body: 'A uniquely experienced Franchise Mediator. When disputes arise over Franchise Agreements, generalist mediators often struggle to bridge the gap. It requires a specialist\u2014a neutral who understands the unique regulatory landscape, the inherent power dynamics, and the commercial realities of the franchise model.',
-			extended: 'John Gelson is a franchise mediator who speaks the language of both the C-suite and the local operator. He doesn\u2019t just evaluate the legal merits of the contract; he looks for business-driven solutions.\n\nAs Jersey Mike\u2019s General Counsel for 15 years, John led a legal team as Jersey Mike\u2019s accelerated its footprint from 250 restaurants to over 3,200 nationwide locations\u2014the fastest-growing sandwich chain in the United States. During John\u2019s tenure, Jersey Mike\u2019s had no litigation or arbitrations with any of its franchisees under the FTC Franchise Rule. John remained with Jersey Mike\u2019s and managed its acquisition by Blackstone in 2024 for $8 billion dollars. He remains a franchisee of Jersey Mike\u2019s.\n\nJohn has lectured extensively on franchise mediation, including at the ABA Forum on Franchising, and has taught mediation at Ave Maria Law School.',
+			extended: 'John Gelson is a franchise mediator who speaks the language of both the C-suite and the local operator. He doesn\u2019t just evaluate the legal merits of the contract; he looks for business-driven solutions.\n\nAs Jersey Mike\u2019s General Counsel for 15 years, John led a legal team as Jersey Mike\u2019s accelerated its footprint from 250 restaurants to over 3,200 nationwide locations\u2014the fastest-growing sandwich chain in the United States. During John\u2019s tenure, Jersey Mike\u2019s had no litigation or arbitrations with any of its franchisees under the FTC Franchise Rule. John remained with Jersey Mike\u2019s and managed its acquisition by Blackstone in 2025 for $8 billion dollars. He remains a franchisee of Jersey Mike\u2019s.\n\nJohn has lectured extensively on franchise mediation, including at the ABA Forum on Franchising, and has taught mediation at Ave Maria Law School.',
 			icon: 'store'
 		},
 		{
@@ -199,69 +199,34 @@
 	.hero-media {
 		position: relative;
 		z-index: 1;
-		overflow: visible;
-		isolation: isolate;
-		max-width: min(100%, 560px);
-		margin-right: calc(var(--gutter) * -0.9);
-		margin-left: auto;
+		max-width: min(100%, 520px);
+		margin-inline: auto;
+		margin-bottom: 16px;
 	}
 
+	/* Gold outline frame offset behind the photo, peeking bottom-right */
 	.hero-media::before {
 		content: '';
 		position: absolute;
-		inset: -8% -10% -8% -10%;
-		z-index: -1;
-		background:
-			radial-gradient(ellipse at 54% 44%, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.16) 34%, transparent 72%),
-			radial-gradient(ellipse at 58% 58%, rgba(28, 46, 74, 0.06) 0%, transparent 68%);
-	}
-
-	.hero-media::after {
-		content: '';
-		position: absolute;
-		z-index: 1;
-		inset: -1px -4% -1px -4%;
+		z-index: 0;
+		inset: 0;
+		transform: translate(16px, 16px);
+		border: 1.5px solid var(--gold);
+		border-radius: var(--radius);
 		pointer-events: none;
-		background:
-			linear-gradient(
-				to right,
-				var(--hero-surface) 0%,
-				rgba(248, 247, 244, 0.42) 10%,
-				rgba(248, 247, 244, 0) 24%,
-				rgba(248, 247, 244, 0) 78%,
-				rgba(248, 247, 244, 0.42) 92%,
-				var(--hero-surface) 100%
-			),
-			linear-gradient(
-				to bottom,
-				var(--hero-surface) 0%,
-				rgba(248, 247, 244, 0) 12%,
-				rgba(248, 247, 244, 0) 82%,
-				var(--hero-surface) 100%
-			);
 	}
 
 	.hero-media img {
 		position: relative;
-		z-index: 0;
+		z-index: 1;
 		width: 100%;
 		height: auto;
 		display: block;
-		aspect-ratio: 1 / 1;
-		-webkit-mask-image: radial-gradient(
-			ellipse at 50% 50%,
-			black 0%,
-			black 66%,
-			rgba(0, 0, 0, 0.86) 78%,
-			transparent 96%
-		);
-		mask-image: radial-gradient(
-			ellipse at 50% 50%,
-			black 0%,
-			black 66%,
-			rgba(0, 0, 0, 0.86) 78%,
-			transparent 96%
-		);
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		object-position: center;
+		border-radius: var(--radius);
+		box-shadow: 0 26px 52px -30px rgba(31, 36, 48, 0.55);
 	}
 
 	.hero-copy h1 {
@@ -473,9 +438,6 @@
 	@media (max-width: 860px) {
 		.hero-grid {
 			grid-template-columns: 1fr;
-		}
-		.hero-media {
-			margin-right: 0;
 		}
 	}
 

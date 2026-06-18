@@ -1,5 +1,4 @@
 <script>
-	import { base } from '$app/paths';
 	import { site } from '$lib/site.js';
 	import SectionRule from '$lib/components/SectionRule.svelte';
 	import { reveal } from '$lib/actions/reveal.js';
@@ -57,24 +56,12 @@
 </svelte:head>
 
 <section class="hero">
-	<div class="hero-layout">
-		<div class="container hero-text-wrap">
-			<div class="hero-copy">
-				<p class="eyebrow">About</p>
-				<h1 class="name-single-line">John F. Gelson</h1>
-				<p class="roles">Mediator &bull; Trial Attorney &bull; Business Counsel</p>
-				<span class="rule"></span>
-				<p class="since">Serving across the United States since 1995</p>
-			</div>
-		</div>
-		<div class="hero-img-wrap">
-			<img
-				src="{base}/images/headshot-main.png"
-				alt="Seated portrait of John F. Gelson"
-				width="1080"
-				height="904"
-			/>
-		</div>
+	<div class="container hero-copy">
+		<p class="eyebrow">About</p>
+		<h1 class="name-single-line">John F. Gelson</h1>
+		<p class="roles">Mediator &bull; Trial Attorney &bull; Business Counsel</p>
+		<span class="rule rule--center"></span>
+		<p class="since">Serving across the United States since 1995</p>
 	</div>
 </section>
 
@@ -82,7 +69,7 @@
 	<div class="container intro-grid">
 		<div class="intro-copy">
 			<p>
-				John F. Gelson has served as a mediator, trial attorney, business counsel, and legal
+				John F. Gelson has served as a mediator, business counsel, trial attorney, and legal
 				advisor for more than four decades.
 			</p>
 			<p>
@@ -153,49 +140,12 @@
 		overflow: hidden;
 	}
 
-	.hero-layout {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		max-width: 1400px;
-		margin-inline: auto;
-		min-height: clamp(420px, 52vh, 560px);
-	}
-
-	.hero-text-wrap {
-		align-self: center;
-		padding-block: clamp(2rem, 4vw, 3rem);
-	}
-
 	.hero-copy {
-		max-width: 480px;
-		margin-left: auto;
-		padding-right: clamp(1.5rem, 3vw, 3rem);
-	}
-
-	.hero-img-wrap {
-		position: relative;
-		overflow: hidden;
-	}
-
-	.hero-img-wrap::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: 1;
-		background:
-			linear-gradient(to left, transparent 70%, var(--off-white) 100%),
-			linear-gradient(to top, rgba(248, 247, 244, 0.5) 0%, transparent 15%),
-			linear-gradient(to bottom, rgba(248, 247, 244, 0.6) 0%, transparent 18%),
-			linear-gradient(to right, transparent 55%, var(--off-white) 100%);
-		pointer-events: none;
-	}
-
-	.hero-img-wrap img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center 15%;
-		display: block;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding-block: clamp(3.5rem, 8vw, 6rem);
 	}
 
 	.hero-copy h1 {
@@ -384,18 +334,6 @@
 	}
 
 	@media (max-width: 860px) {
-		.hero-layout {
-			grid-template-columns: 1fr;
-			min-height: auto;
-		}
-		.hero-copy {
-			max-width: 100%;
-			margin-left: 0;
-			padding-right: 0;
-		}
-		.hero-img-wrap {
-			max-height: 400px;
-		}
 		.intro-grid,
 		.cred-grid {
 			grid-template-columns: 1fr;
