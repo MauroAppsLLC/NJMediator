@@ -164,40 +164,104 @@
 
 <style>
 	.hero {
-		background: linear-gradient(180deg, var(--off-white), var(--warm-gray));
+		--hero-surface: #f8f7f4;
+
+		overflow: hidden;
+		background:
+			radial-gradient(
+				ellipse at 72% 44%,
+				rgba(255, 255, 255, 0.68) 0%,
+				rgba(255, 255, 255, 0.28) 32%,
+				rgba(248, 247, 244, 0) 64%
+			),
+			radial-gradient(
+				ellipse at 78% 62%,
+				rgba(28, 46, 74, 0.045) 0%,
+				rgba(28, 46, 74, 0) 58%
+			),
+			var(--hero-surface);
 		border-bottom: 1px solid var(--hairline);
 	}
 
 	.hero-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 0.88fr) minmax(460px, 1.12fr);
 		align-items: center;
-		gap: clamp(2rem, 5vw, 4rem);
+		gap: clamp(1.75rem, 4vw, 3.25rem);
 		padding-block: clamp(3rem, 6vw, 4.5rem);
+	}
+
+	.hero-copy {
+		position: relative;
+		z-index: 2;
 	}
 
 	.hero-media {
 		position: relative;
-		border-radius: var(--radius);
-		overflow: hidden;
-		box-shadow: 0 30px 60px -34px rgba(31, 36, 48, 0.55);
+		z-index: 1;
+		overflow: visible;
+		isolation: isolate;
+		max-width: min(100%, 560px);
+		margin-right: calc(var(--gutter) * -0.9);
+		margin-left: auto;
+	}
+
+	.hero-media::before {
+		content: '';
+		position: absolute;
+		inset: -8% -10% -8% -10%;
+		z-index: -1;
+		background:
+			radial-gradient(ellipse at 54% 44%, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.16) 34%, transparent 72%),
+			radial-gradient(ellipse at 58% 58%, rgba(28, 46, 74, 0.06) 0%, transparent 68%);
 	}
 
 	.hero-media::after {
 		content: '';
 		position: absolute;
-		inset: 0;
+		z-index: 1;
+		inset: -1px -4% -1px -4%;
 		pointer-events: none;
-		box-shadow: inset 0 0 0 1px rgba(31, 36, 48, 0.08);
-		border-radius: inherit;
+		background:
+			linear-gradient(
+				to right,
+				var(--hero-surface) 0%,
+				rgba(248, 247, 244, 0.42) 10%,
+				rgba(248, 247, 244, 0) 24%,
+				rgba(248, 247, 244, 0) 78%,
+				rgba(248, 247, 244, 0.42) 92%,
+				var(--hero-surface) 100%
+			),
+			linear-gradient(
+				to bottom,
+				var(--hero-surface) 0%,
+				rgba(248, 247, 244, 0) 12%,
+				rgba(248, 247, 244, 0) 82%,
+				var(--hero-surface) 100%
+			);
 	}
 
 	.hero-media img {
+		position: relative;
+		z-index: 0;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		height: auto;
 		display: block;
-		aspect-ratio: 5 / 4;
+		aspect-ratio: 1 / 1;
+		-webkit-mask-image: radial-gradient(
+			ellipse at 50% 50%,
+			black 0%,
+			black 66%,
+			rgba(0, 0, 0, 0.86) 78%,
+			transparent 96%
+		);
+		mask-image: radial-gradient(
+			ellipse at 50% 50%,
+			black 0%,
+			black 66%,
+			rgba(0, 0, 0, 0.86) 78%,
+			transparent 96%
+		);
 	}
 
 	.hero-copy h1 {
@@ -409,6 +473,9 @@
 	@media (max-width: 860px) {
 		.hero-grid {
 			grid-template-columns: 1fr;
+		}
+		.hero-media {
+			margin-right: 0;
 		}
 	}
 
