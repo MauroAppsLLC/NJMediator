@@ -1,5 +1,6 @@
 <script>
 	import { site } from '$lib/site.js';
+	import { reveal } from '$lib/actions/reveal.js';
 
 	let name = $state('');
 	let email = $state('');
@@ -32,7 +33,7 @@
 	<title>Contact | John F. Gelson — Mediation & Resolution Services</title>
 	<meta
 		name="description"
-		content="Contact John F. Gelson to discuss your case. Office in Little Silver, New Jersey, serving clients throughout New Jersey and New York. All inquiries are confidential."
+		content="Contact John F. Gelson to discuss your case. Serving clients across the United States. All inquiries are confidential."
 	/>
 </svelte:head>
 
@@ -50,7 +51,7 @@
 	</div>
 </section>
 
-<section class="section connect">
+<section class="section connect" use:reveal>
 	<div class="container connect-grid">
 		<div class="info">
 			<p class="eyebrow">Contact Information</p>

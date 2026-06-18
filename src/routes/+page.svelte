@@ -3,6 +3,7 @@
 	import StatGrid from '$lib/components/StatGrid.svelte';
 	import FeatureGrid from '$lib/components/FeatureGrid.svelte';
 	import SectionRule from '$lib/components/SectionRule.svelte';
+	import { reveal } from '$lib/actions/reveal.js';
 
 	const stats = [
 		{ value: '30+', label: 'Years Experience' },
@@ -68,14 +69,14 @@
 	</div>
 </section>
 
-<section class="section stats-section">
+<section class="section stats-section" use:reveal>
 	<div class="container">
 		<SectionRule eyebrow="Why Clients Choose John" title="A trusted mediator serving across the United States" center />
 		<StatGrid items={stats} />
 	</div>
 </section>
 
-<section class="section press">
+<section class="section press" use:reveal>
 	<div class="container press-inner">
 		<p class="eyebrow">Headline</p>
 		<h2 class="press-title">
@@ -92,14 +93,14 @@
 	</div>
 </section>
 
-<section class="section litigation">
+<section class="section litigation" use:reveal>
 	<div class="container">
 		<SectionRule title="Mediation Over Litigation" center />
 		<FeatureGrid items={advantages} columns={4} boxed />
 	</div>
 </section>
 
-<section class="section section-dark closing">
+<section class="section section-dark closing" use:reveal>
 	<div class="container container--narrow">
 		<h2>Experienced mediation. Practical solutions. Efficient outcomes.</h2>
 		<span class="rule rule--center"></span>

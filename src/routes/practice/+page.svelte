@@ -1,6 +1,7 @@
 <script>
+	import { base } from '$app/paths';
 	import SectionRule from '$lib/components/SectionRule.svelte';
-	import ImageSlot from '$lib/components/ImageSlot.svelte';
+	import { reveal } from '$lib/actions/reveal.js';
 
 	const areas = [
 		{
@@ -44,7 +45,7 @@
 	<title>Practice Areas | John F. Gelson — Mediation Services</title>
 	<meta
 		name="description"
-		content="John F. Gelson mediates commercial, construction, employment, franchise, and personal injury disputes throughout New Jersey and New York."
+		content="John F. Gelson mediates franchise, commercial, construction, and employment disputes across the United States."
 	/>
 </svelte:head>
 
@@ -79,12 +80,18 @@
 			</p>
 		</div>
 		<div class="hero-media">
-			<ImageSlot caption="Office desk, legal volumes, and notebook" ratio="5 / 4" />
+			<img
+				src="{base}/images/contact-desk.png"
+				alt="Law office desk with legal volumes, notepad, and pen"
+				width="1254"
+				height="1254"
+				loading="lazy"
+			/>
 		</div>
 	</div>
 </section>
 
-<section class="section areas">
+<section class="section areas" use:reveal>
 	<div class="container">
 		<SectionRule title="Areas of Mediation" center />
 
@@ -115,7 +122,7 @@
 	</div>
 </section>
 
-<section class="section resolutions">
+<section class="section resolutions" use:reveal>
 	<div class="container">
 		<SectionRule title="Selected Resolutions" center />
 		<div class="res-grid">
@@ -130,7 +137,7 @@
 	</div>
 </section>
 
-<section class="section why">
+<section class="section why" use:reveal>
 	<div class="container">
 		<SectionRule title="Why Mediation" center />
 		<div class="why-grid">
@@ -147,7 +154,7 @@
 	</div>
 </section>
 
-<section class="section-dark final">
+<section class="section-dark final" use:reveal>
 	<div class="container">
 		<h2>Experienced mediation.<br />Practical solutions.<br />Efficient outcomes.</h2>
 		<span class="rule"></span>
@@ -167,6 +174,30 @@
 		align-items: center;
 		gap: clamp(2rem, 5vw, 4rem);
 		padding-block: clamp(3rem, 6vw, 4.5rem);
+	}
+
+	.hero-media {
+		position: relative;
+		border-radius: var(--radius);
+		overflow: hidden;
+		box-shadow: 0 30px 60px -34px rgba(31, 36, 48, 0.55);
+	}
+
+	.hero-media::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		box-shadow: inset 0 0 0 1px rgba(31, 36, 48, 0.08);
+		border-radius: inherit;
+	}
+
+	.hero-media img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		aspect-ratio: 5 / 4;
 	}
 
 	.hero-copy h1 {
@@ -279,6 +310,9 @@
 		font-weight: 500;
 		color: var(--navy);
 		line-height: 1;
+		font-variant-numeric: lining-nums tabular-nums;
+		font-feature-settings: 'lnum' 1, 'tnum' 1;
+		letter-spacing: -0.01em;
 	}
 
 	.res-rule {

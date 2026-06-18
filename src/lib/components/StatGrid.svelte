@@ -37,6 +37,9 @@
 		font-weight: 500;
 		color: var(--navy);
 		line-height: 1;
+		font-variant-numeric: lining-nums tabular-nums;
+		font-feature-settings: 'lnum' 1, 'tnum' 1;
+		letter-spacing: -0.01em;
 	}
 
 	.label {

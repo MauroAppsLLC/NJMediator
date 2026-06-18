@@ -26,10 +26,38 @@
 	}
 
 	.boxed .cell {
+		position: relative;
 		background: #fff;
 		border: 1px solid var(--hairline);
 		border-radius: var(--radius);
 		padding: clamp(1.5rem, 2.5vw, 2rem);
+		overflow: hidden;
+		transition:
+			transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+			box-shadow 0.3s ease,
+			border-color 0.3s ease;
+	}
+
+	.boxed .cell::before {
+		content: '';
+		position: absolute;
+		inset: 0 auto auto 0;
+		width: 100%;
+		height: 2px;
+		background: var(--gold);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.boxed .cell:hover {
+		transform: translateY(-4px);
+		border-color: transparent;
+		box-shadow: 0 18px 40px -22px rgba(31, 36, 48, 0.35);
+	}
+
+	.boxed .cell:hover::before {
+		transform: scaleX(1);
 	}
 
 	.dark.boxed .cell {

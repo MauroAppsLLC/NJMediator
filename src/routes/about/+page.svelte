@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import { site } from '$lib/site.js';
 	import SectionRule from '$lib/components/SectionRule.svelte';
+	import { reveal } from '$lib/actions/reveal.js';
 
 	const experience = [
 		{
@@ -51,7 +52,7 @@
 	<title>About | John F. Gelson — Mediator, Trial Attorney & Business Counsel</title>
 	<meta
 		name="description"
-		content="More than four decades as a mediator, trial attorney, and business counsel. Since 1995, John F. Gelson has conducted over 1,500 mediations across New Jersey and New York."
+		content="More than four decades as a mediator, trial attorney, and business counsel. Since 1995, John F. Gelson has conducted over 1,500 mediations across the United States."
 	/>
 </svelte:head>
 
@@ -77,7 +78,7 @@
 	</div>
 </section>
 
-<section class="section intro">
+<section class="section intro" use:reveal>
 	<div class="container intro-grid">
 		<div class="intro-copy">
 			<p>
@@ -115,7 +116,7 @@
 	</div>
 </section>
 
-<section class="section credentials">
+<section class="section credentials" use:reveal>
 	<div class="container cred-grid">
 		<div>
 			<SectionRule eyebrow="Certifications & Recognition" />
@@ -139,7 +140,7 @@
 	</div>
 </section>
 
-<section class="section-dark brand-final">
+<section class="section-dark brand-final" use:reveal>
 	<div class="container">
 		<p class="brand-quote">&ldquo;{site.brandLine}&rdquo;</p>
 	</div>
@@ -235,23 +236,51 @@
 		color: var(--text);
 	}
 
+	.intro-copy p:first-of-type::first-letter {
+		float: left;
+		font-family: var(--font-heading);
+		font-size: 3.6em;
+		line-height: 0.78;
+		padding: 0.06em 0.14em 0 0;
+		color: var(--navy);
+	}
+
 	.exp-list {
 		display: flex;
 		flex-direction: column;
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		counter-reset: none;
+		counter-reset: exp;
 	}
 
 	.exp-item {
-		padding: 1.5rem 0;
+		counter-increment: exp;
+		position: relative;
+		padding: 1.5rem 0 1.5rem 3.25rem;
 		border-top: 1px solid var(--hairline);
+	}
+
+	.exp-item::before {
+		content: counter(exp, decimal-leading-zero);
+		position: absolute;
+		left: 0;
+		top: 1.6rem;
+		font-family: var(--font-heading);
+		font-size: 0.95rem;
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		color: var(--gold);
+		font-variant-numeric: lining-nums tabular-nums;
 	}
 
 	.exp-item:first-child {
 		padding-top: 0;
 		border-top: 0;
+	}
+
+	.exp-item:first-child::before {
+		top: 0.1rem;
 	}
 
 	.exp-head {
