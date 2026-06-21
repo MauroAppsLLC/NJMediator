@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>John F. Gelson | Mediator, Trial Attorney & Business Counsel — NJ & NY</title>
+	<title>John F. Gelson | Mediator, Business Counsel & Trial Attorney — NJ & NY</title>
 	<meta
 		name="description"
 		content="John F. Gelson resolves complex disputes across the United States with experience, credibility, and a style that puts people at ease. Court-appointed mediator since 1995."
@@ -60,10 +60,10 @@
 		</div>
 		<div class="hero-img-wrap">
 			<img
-				src="{base}/images/headshot-main.png"
+				src="{base}/images/headshot-hero-final.jpeg"
 				alt="Seated portrait of John F. Gelson"
-				width="1080"
-				height="904"
+				width="4182"
+				height="4668"
 			/>
 		</div>
 	</div>
@@ -149,62 +149,59 @@
 	.hero-img-wrap {
 		position: relative;
 		z-index: 1;
-		overflow: visible;
-		align-self: end;
-		min-height: 100%;
-		margin-right: calc(var(--gutter) * -0.85);
-		isolation: isolate;
+		align-self: center;
+		max-width: min(100%, 560px);
+		margin-inline: auto;
+		margin-bottom: 16px;
 	}
 
+	/* Offset gold outline frame peeking bottom-right */
 	.hero-img-wrap::before {
 		content: '';
 		position: absolute;
-		inset: 2% -8% 7% -8%;
-		z-index: -1;
-		background:
-			radial-gradient(ellipse at 60% 38%, rgba(255, 255, 255, 0.74) 0%, rgba(255, 255, 255, 0.34) 34%, transparent 70%),
-			radial-gradient(ellipse at 58% 58%, rgba(28, 46, 74, 0.05) 0%, transparent 66%);
-	}
-
-	.hero-img-wrap::after {
-		content: '';
-		position: absolute;
-		z-index: 1;
-		inset: 0 -4% 0 -4%;
+		inset: 0;
+		z-index: 0;
+		transform: translate(16px, 16px);
+		border: 1.5px solid var(--gold);
+		border-radius: var(--radius);
 		pointer-events: none;
-		background:
-			linear-gradient(
-				to right,
-				var(--hero-surface) 0%,
-				rgba(248, 247, 244, 0.85) 8%,
-				rgba(248, 247, 244, 0) 26%,
-				rgba(248, 247, 244, 0) 74%,
-				rgba(248, 247, 244, 0.85) 92%,
-				var(--hero-surface) 100%
-			),
-			linear-gradient(to bottom, rgba(248, 247, 244, 0) 76%, var(--hero-surface) 98%);
 	}
 
 	.hero-img-wrap img {
 		position: relative;
-		z-index: 0;
-		width: min(112%, 760px);
-		height: 100%;
-		min-height: clamp(600px, calc(100vh - 88px), 760px);
+		z-index: 1;
+		width: 100%;
+		height: auto;
 		display: block;
-		object-fit: cover;
-		object-position: 50% 16%;
-		margin-left: auto;
-		-webkit-mask-image:
-			radial-gradient(ellipse at 57% 42%, black 0%, black 52%, rgba(0, 0, 0, 0.86) 64%, transparent 90%),
-			linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%),
-			linear-gradient(to bottom, black 0%, black 88%, transparent 100%);
-		-webkit-mask-composite: destination-in;
-		mask-image:
-			radial-gradient(ellipse at 57% 42%, black 0%, black 52%, rgba(0, 0, 0, 0.86) 64%, transparent 90%),
-			linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%),
-			linear-gradient(to bottom, black 0%, black 88%, transparent 100%);
-		mask-composite: intersect;
+		border-radius: var(--radius);
+		box-shadow: 0 26px 52px -30px rgba(31, 36, 48, 0.55);
+		transition:
+			transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+			box-shadow 0.45s ease;
+	}
+
+	.hero-img-wrap:hover img {
+		transform: translate(-4px, -4px);
+		box-shadow: 0 34px 64px -30px rgba(31, 36, 48, 0.6);
+	}
+
+	@keyframes hero-rise {
+		from {
+			opacity: 0;
+			transform: translateY(16px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	.hero-copy {
+		animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+	}
+
+	.hero-img-wrap {
+		animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
 	}
 
 	.hero-copy h1 {

@@ -48,10 +48,10 @@
 </script>
 
 <svelte:head>
-	<title>About | John F. Gelson — Mediator, Trial Attorney & Business Counsel</title>
+	<title>About | John F. Gelson — Mediator, Business Counsel & Trial Attorney</title>
 	<meta
 		name="description"
-		content="More than four decades as a mediator, trial attorney, and business counsel. Since 1995, John F. Gelson has conducted over 1,500 mediations across the United States."
+		content="More than four decades as a mediator, business counsel, and trial attorney. Since 1995, John F. Gelson has conducted over 1,500 mediations across the United States."
 	/>
 </svelte:head>
 
@@ -59,7 +59,7 @@
 	<div class="container hero-copy">
 		<p class="eyebrow">About</p>
 		<h1 class="name-single-line">John F. Gelson</h1>
-		<p class="roles">Mediator &bull; Trial Attorney &bull; Business Counsel</p>
+		<p class="roles">Mediator &bull; Business Counsel &bull; Trial Attorney</p>
 		<span class="rule rule--center"></span>
 		<p class="since">Serving across the United States since 1995</p>
 	</div>

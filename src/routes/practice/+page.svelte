@@ -6,8 +6,8 @@
 	const areas = [
 		{
 			title: 'Franchise Disputes',
-			body: 'A uniquely experienced Franchise Mediator. When disputes arise over Franchise Agreements, generalist mediators often struggle to bridge the gap. It requires a specialist\u2014a neutral who understands the unique regulatory landscape, the inherent power dynamics, and the commercial realities of the franchise model.',
-			extended: 'John Gelson is a franchise mediator who speaks the language of both the C-suite and the local operator. He doesn\u2019t just evaluate the legal merits of the contract; he looks for business-driven solutions.\n\nAs Jersey Mike\u2019s General Counsel for 15 years, John led a legal team as Jersey Mike\u2019s accelerated its footprint from 250 restaurants to over 3,200 nationwide locations\u2014the fastest-growing sandwich chain in the United States. During John\u2019s tenure, Jersey Mike\u2019s had no litigation or arbitrations with any of its franchisees under the FTC Franchise Rule. John remained with Jersey Mike\u2019s and managed its acquisition by Blackstone in 2025 for $8 billion dollars. He remains a franchisee of Jersey Mike\u2019s.\n\nJohn has lectured extensively on franchise mediation, including at the ABA Forum on Franchising, and has taught mediation at Ave Maria Law School.',
+			body: 'John Gelson is a prominent franchise attorney and mediator best known for his long tenure as the Vice-President and General Counsel for Jersey Mike\u2019s Franchise Systems, Inc.',
+			extended: 'When disputes arise over Franchise Agreements, generalist mediators often struggle to bridge the gap. It requires a specialist\u2014a neutral who understands the unique regulatory landscape, the inherent power dynamics, and the commercial realities of the franchise model.\n\nJohn is a uniquely experienced Franchise Mediator who speaks the language of both the C-suite and the local operator. He doesn\u2019t just evaluate the legal merits of the contract; he looks for business-driven solutions.\n\nAs Jersey Mike\u2019s General Counsel for 15 years, John led a legal team as Jersey Mike\u2019s accelerated its footprint from 300 restaurants to over 3,500 nationwide locations\u2014the fastest-growing sandwich chain in the United States. During John\u2019s tenure, Jersey Mike\u2019s had no litigation or arbitrations with any of its franchisees under the FTC Franchise Rule. In his role, John leveraged mediation tactics to resolve disputes with franchisees without escalating to litigation.\n\nJohn remained with Jersey Mike\u2019s until 2025 and managed its acquisition by Blackstone for $8 billion dollars. He remains a franchisee of Jersey Mike\u2019s.\n\nGiven his high-profile background in corporate franchise law, he is a frequent panelist within the ABA Forum on Franchising and the International Franchise Association. John has lectured extensively on franchise mediation and has taught mediation at Ave Maria Law School.',
 			icon: 'store'
 		},
 		{
@@ -156,7 +156,7 @@
 
 <section class="section-dark final" use:reveal>
 	<div class="container">
-		<h2>Experienced mediation.<br />Practical solutions.<br />Efficient outcomes.</h2>
+		<h2>Experienced mediator.<br />Practical solutions.<br />Efficient outcomes.</h2>
 		<span class="rule"></span>
 		<p>Helping people resolve complex disputes across the United States.</p>
 	</div>
@@ -202,6 +202,7 @@
 		max-width: min(100%, 520px);
 		margin-inline: auto;
 		margin-bottom: 16px;
+		animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
 	}
 
 	/* Gold outline frame offset behind the photo, peeking bottom-right */
@@ -227,6 +228,25 @@
 		object-position: center;
 		border-radius: var(--radius);
 		box-shadow: 0 26px 52px -30px rgba(31, 36, 48, 0.55);
+		transition:
+			transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+			box-shadow 0.45s ease;
+	}
+
+	.hero-media:hover img {
+		transform: translate(-4px, -4px);
+		box-shadow: 0 34px 64px -30px rgba(31, 36, 48, 0.6);
+	}
+
+	@keyframes hero-rise {
+		from {
+			opacity: 0;
+			transform: translateY(16px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
 	}
 
 	.hero-copy h1 {
@@ -251,9 +271,10 @@
 	}
 
 	.area-featured-intro {
-		font-size: 1.05rem;
-		color: var(--text);
-		font-weight: 500;
+		font-size: 0.95rem;
+		color: var(--text-muted);
+		font-weight: 400;
+		line-height: 1.7;
 		margin-bottom: 1.25rem;
 	}
 

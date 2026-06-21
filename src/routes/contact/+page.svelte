@@ -126,7 +126,7 @@
 
 <section class="section-dark closing">
 	<div class="container">
-		<p class="closing-line">Experienced mediation. Practical solutions. Efficient outcomes.</p>
+		<p class="closing-line">Experienced mediator. Practical solutions. Efficient outcomes.</p>
 		<span class="rule rule--center"></span>
 	</div>
 </section>
