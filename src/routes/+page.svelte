@@ -60,10 +60,10 @@
 		</div>
 		<div class="hero-img-wrap">
 			<img
-				src="{base}/images/headshot-hero-final.jpeg"
+				src="{base}/images/hero-seated.jpeg"
 				alt="Seated portrait of John F. Gelson"
-				width="4182"
-				height="4668"
+				width="807"
+				height="666"
 			/>
 		</div>
 	</div>
@@ -132,25 +132,25 @@
 
 	.hero-grid {
 		display: grid;
-		grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1.14fr);
-		align-items: stretch;
-		gap: clamp(2rem, 5vw, 5.5rem);
-		min-height: clamp(620px, calc(100vh - 88px), 760px);
+		grid-template-columns: minmax(0, 0.82fr) minmax(440px, 1.18fr);
+		align-items: center;
+		gap: clamp(1.75rem, 4vw, 4rem);
+		min-height: clamp(480px, 62vh, 600px);
 	}
 
 	.hero-copy {
 		position: relative;
 		z-index: 2;
 		align-self: center;
-		max-width: 500px;
-		padding-block: clamp(4rem, 7vw, 6.5rem);
+		max-width: 480px;
+		padding-block: clamp(2.5rem, 4.5vw, 4rem);
 	}
 
 	.hero-img-wrap {
 		position: relative;
 		z-index: 1;
 		align-self: center;
-		max-width: min(100%, 560px);
+		max-width: min(100%, 600px);
 		margin-inline: auto;
 		margin-bottom: 16px;
 	}
@@ -205,7 +205,7 @@
 	}
 
 	.hero-copy h1 {
-		font-size: clamp(2.35rem, 4.4vw, 3.55rem);
+		font-size: clamp(2rem, 3.4vw, 2.85rem);
 		color: var(--charcoal);
 	}
 
