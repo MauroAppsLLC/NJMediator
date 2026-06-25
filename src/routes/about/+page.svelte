@@ -42,8 +42,8 @@
 
 	const education = [
 		{ school: 'University of Notre Dame', degree: 'B.A., English' },
-		{ school: 'Drake University Law School', degree: 'J.D.' },
-		{ school: 'London School of Economics', degree: 'International Law' }
+		{ school: 'Notre Dame Law School, London, England', degree: 'International Law' },
+		{ school: 'Drake University Law School', degree: 'J.D.' }
 	];
 </script>
 
