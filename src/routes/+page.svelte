@@ -80,11 +80,11 @@
 	<div class="container press-inner">
 		<p class="eyebrow">Headline</p>
 		<h2 class="press-title">
-			<a
-				href="https://www.law.com/corpcounsel/2025/06/12/ex-prison-guard-who-became-jersey-mikes-gc-returns-to-mediation-roots-after-8b-blackstone-sale/?slreturn=20260603151235"
-				target="_blank"
-				rel="noreferrer"
-			>
+		<a
+			href="{base}/NJ-Mediator-Article.pdf"
+			target="_blank"
+			rel="noreferrer"
+		>
 				GC Returns to Mediation Roots After $8B Blackstone Sale
 				<svg class="link-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 15 15 5M15 5H7M15 5v8"/></svg>
 			</a>
